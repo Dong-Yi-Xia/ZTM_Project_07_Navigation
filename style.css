@@ -30,6 +30,18 @@ body {
   width: 100vw;
   height: 100vh;
   background-color: rgba(0,0, 0, 0.7);
+  transform: translateX(-100vw); /* hidden, bring out of view  */
+}
+
+/* Animate the nav slide effect */
+.overlay-slide-right{
+  transition: all 0.4s ease-in-out;
+  transform: translateX(0); /* bring back into view */
+}
+
+.overlay-slide-left{
+  transition: all 0.8s ease-in-out;
+  transform: translateX(-100vw); /* bring out of view */
 }
 
 /* Nav Menu Items */
@@ -61,6 +73,27 @@ nav li a {
   text-decoration: none;
   display: block;
   text-align: center;
+}
+
+nav li a:hover{
+  transform: scale(1.2);
+}
+
+/* add before the <a> tag */
+nav li a::before { 
+  content: '';
+  width: 25vw;
+  height: 3px;
+  background-color: #fff;
+  position: absolute;
+  top: 47.5%;
+  left: 0;
+  opacity: 0;
+}
+
+/* add before the <a> tag on hover */
+nav li a:hover::before{
+  opacity: 1;
 }
 
 nav li:nth-of-type(1){
