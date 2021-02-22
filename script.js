@@ -7,6 +7,8 @@ const nav4 = document.getElementById('nav-4')
 const nav5 = document.getElementById('nav-5')
 const navItems = [nav1, nav2, nav3, nav4, nav5]
 
+const aLink = document.querySelectorAll('ul li a')
+
 
 
 
@@ -96,6 +98,13 @@ function toggleNav(){
 
 // Event Listeners 
 menuBars.addEventListener('click', toggleNav)
-navItems.forEach(nav => {
+
+// click on the nav li to toggleNav
+// navItems.forEach(nav => {
+//     nav.addEventListener('click', toggleNav)
+// })
+
+// click on the nav li a to toggleNav
+aLink.forEach(nav => {
     nav.addEventListener('click', toggleNav)
 })
